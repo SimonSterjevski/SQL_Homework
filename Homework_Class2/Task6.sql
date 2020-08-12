@@ -11,18 +11,10 @@
 --go
 
 
-
-select distinct Course.Name, AchievementType.Name from Course
-left join Grade on Grade.CourseID = Course.ID
-left join GradeDetails on GradeDetails.GradeID = Grade.ID
-left join AchievementType on GradeDetails.AchievementTypeID = AchievementType.ID
+select Course.Name, AchievementType.Name
+from Course
+cross join AchievementType
 go
---select distinct Course.Name, AchievementType.Name from Course
---inner join Grade on Grade.CourseID = Course.ID
---inner join GradeDetails on GradeDetails.GradeID = Grade.ID
---inner join AchievementType on GradeDetails.AchievementTypeID = AchievementType.ID
---go
-
 
 
 select distinct Teacher.ID, FirstName, LastName from Teacher
